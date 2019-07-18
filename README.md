@@ -8,16 +8,9 @@
 读取配置制定路径下的dll, 反射所有类型，然后根据模版文件，使用这些反射得到的类型信息，替换模版中的token,模版中可以通过for if 以及函数调用的形式进行求值替换
 
 视频解说地址:
-
 3. part01: [https://www.bilibili.com/video/av59694947][5]
-
-
-<iframe src="//player.bilibili.com/player.html?aid=59694947&cid=103980168&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-
 4. part02: [https://www.bilibili.com/video/av59718130][6]
 
-<iframe src="//player.bilibili.com/player.html?aid=59718130&cid=104000103&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 ##### 2.语法&语言特性
 
 ```cs  
