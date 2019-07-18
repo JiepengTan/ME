@@ -1,0 +1,60 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.2",
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.2": {
+      "Lockstep.ECS.ECDefine/1.0.0": {
+        "dependencies": {
+          "Lockstep.Util": "1.0.0"
+        },
+        "runtime": {
+          "Lockstep.ECS.ECDefine.dll": {}
+        }
+      },
+      "Lockstep.Logging/1.0.0": {
+        "runtime": {
+          "Lockstep.Logging.dll": {}
+        }
+      },
+      "Lockstep.Serialization/1.0.0": {
+        "runtime": {
+          "Lockstep.Serialization.dll": {}
+        }
+      },
+      "Lockstep.Util/1.0.0": {
+        "dependencies": {
+          "Lockstep.Logging": "1.0.0",
+          "Lockstep.Serialization": "1.0.0"
+        },
+        "runtime": {
+          "Lockstep.Util.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Lockstep.ECS.ECDefine/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Lockstep.Logging/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Lockstep.Serialization/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Lockstep.Util/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

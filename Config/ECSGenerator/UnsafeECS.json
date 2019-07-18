@@ -1,0 +1,29 @@
+{
+  "DllNameTag": "Lockstep.ECS.ECDefine",
+  "IgnoreDll": "Lockstep.ECS.ECDefine.dll",
+  "ShellCmd": "",
+  "ShellWorkingDir": "",
+  "MacroDefinePath": "../Config/ECSGenerator/MacroDefine.json",
+  "SrcFileDir": "../Config/ECSGenerator/TemplateInput/",
+  "DesFileDir": "../Config/ECSGenerator/TemplateOutput/",
+  "FileExtension": "*.cs",
+  "CopySrcDir": "",
+  "CopyDstDir": "../Src/ECS.ECSOutput/Src/Unsafe/Common",
+  "TypeNameSpaceTag": "Lockstep.ECS.ECDefine.UnsafeECS|Lockstep.ECS.ECDefine",
+  "FileContent": [
+    "\n//#define DONT_USE_GENERATE_CODE                                                                ",
+    "\n                                                                                                ",
+    "\nusing System.Linq;                                                                              ",
+    "\nusing Lockstep.Serialization;                                                                   ",
+    "\nusing System.Runtime.InteropServices;                                                           ",
+    "\nusing System;                                                                                   ",
+    "\nusing Lockstep.Math;                                                                            ",
+    "\nusing System.Collections.Generic;                                                               ",
+    "\nusing Lockstep.Logging;                                                                         ",
+    "\nnamespace Lockstep.UnsafeECS.Game{                                                              ",
+    "\n#if !DONT_USE_GENERATE_CODE                                                                     ",
+    "\n#TYPES_EXTENSIONS                                                                               ",
+    "\n#endif                                                                                          ",
+    "\n}                                                                                               "
+  ]
+}
