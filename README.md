@@ -4,7 +4,10 @@
 1. 主要功能是宏展开，提供for,if,function,三种基本语言的特性，用于弥补c#等不支持宏拓展的编程语言的缺点。
 2. 初衷是用于[LockstepPlatform][1]中的[UnsafeECS][2]框架的设计，加快基于代码生成的框架的迭代速度。
 
-##### 1.语法
+原理：
+读取配置制定路径下的dll, 反射所有类型，然后根据模版文件，使用这些反射得到的类型信息，替换模版中的token,模版中可以通过for if 以及函数调用的形式进行求值替换
+
+##### 2.语法&语言特性
 
 ```cs  
 
@@ -13,8 +16,6 @@
  3. 以 分号 ; 作为关键字语句的划分
  4. 函数调用 以 call XxxFunc(0,10,1);
 ```
-
-##### 2.语言特性
 
 1. 默认设置:
 
@@ -271,36 +272,40 @@ HasField(#CLS_NAME,#BUILIN_NAME) 返回当前#CLS_NAME 表示的类型 是否含
 ```
 
 ```cs
-        public void OnProjectileCreated(Projectile* entity) {
-            var array = _f._ISignalOnProjectileCreatedSystems;
+    
+    public unsafe partial class FrameSignals  {
+        public void OnDamage(DamageStructure dmg) {
+            var array = _f._ISignalOnDamageSystems;
             var systems = &(_f._globals->Systems);
             for (Int32 i = 0; i < array.Length; ++i) {
                 var s = array[i];
                 if (BitSet256.IsSet(systems, s.RuntimeIndex)) {
-                  s.OnProjectileCreated(_f,entity);
+                  s.OnDamage(_f,dmg);
                 }
             }
         }
-        public void OnProjectileDestroy(Projectile* entity) {
-            var array = _f._ISignalOnProjectileDestroySystems;
+        public void OnBossDeath() {
+            var array = _f._ISignalOnBossDeathSystems;
             var systems = &(_f._globals->Systems);
             for (Int32 i = 0; i < array.Length; ++i) {
                 var s = array[i];
                 if (BitSet256.IsSet(systems, s.RuntimeIndex)) {
-                  s.OnProjectileDestroy(_f,entity);
+                  s.OnBossDeath(_f);
                 }
             }
         }
-        public void OnGoblinCreated(Goblin* entity) {
-            var array = _f._ISignalOnGoblinCreatedSystems;
+        public void OnCastProjectile(EntityRef projectileSource, LVector2 forward, LVector2 right, LFloat projectileAngle, EProjectileType projectileType, ProjectileSpec projectileSpec) {
+            var array = _f._ISignalOnCastProjectileSystems;
             var systems = &(_f._globals->Systems);
             for (Int32 i = 0; i < array.Length; ++i) {
                 var s = array[i];
                 if (BitSet256.IsSet(systems, s.RuntimeIndex)) {
-                  s.OnGoblinCreated(_f,entity);
+                  s.OnCastProjectile(_f,projectileSource ,forward ,right ,projectileAngle ,projectileType ,projectileSpec);
                 }
             }
         }
+        //...还有其他代码
+    }
 ```
 
 
