@@ -9,7 +9,7 @@ namespace Lockstep.Tools.MacroExpansion {
     internal class Program {
         public static void Main(string[] args){
             ParseCodes(args);
-        }
+        } 
         
         private static void ParseCodes(string[] args){
             if (args == null || args.Length == 0) {
