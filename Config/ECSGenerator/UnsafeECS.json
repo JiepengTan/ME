@@ -10,6 +10,7 @@
   "CopySrcDir": "",
   "CopyDstDir": "../Src/ECS.ECSOutput/Src/Unsafe/Common",
   "TypeNameSpaceTag": "Lockstep.ECS.ECDefine.UnsafeECS|Lockstep.ECS.ECDefine",
+  "IsGenDebugInfo":true,
   "FileContent": [
     "\n//#define DONT_USE_GENERATE_CODE                                                                ",
     "\n                                                                                                ",
